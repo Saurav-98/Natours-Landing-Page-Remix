@@ -4,6 +4,7 @@ $color-primary-dark: #28b485;
 
 $color-grey-dark: #777;
 $color-grey-white: #fff;
+$color-black: #000;
 
 *,
 *::after,
@@ -37,23 +38,23 @@ body {
   background-size: cover;
   background-position: top;
   clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 75vh);
-}
 
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-.header__logo {
-  height: 3.5rem;
-}
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
+  &__logo {
+    height: 3.5rem;
+  }
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
 
-  transform: translate(-50%, -50%);
-  text-align: center;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 }
 
 .heading-primmary {
@@ -61,24 +62,21 @@ body {
   text-transform: uppercase;
   backface-visibility: hidden;
   margin-bottom: 6rem;
-}
-.heading-primary--main {
-  display: block;
-  font-weight: 400;
-  font-size: 6rem;
-  letter-spacing: 3.5rem;
-  animation: moveInLeft 1.6s ease-in-out 1s;
 
-  /* 
-  
-  */
-}
-.heading-primary--sub {
-  display: block;
-  font-weight: 700;
-  font-size: 2rem;
-  letter-spacing: 1.75rem;
-  animation: moveInRight 1.6s ease-in-out 1s;
+  &--main {
+    display: block;
+    font-weight: 400;
+    font-size: 6rem;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1.6s ease-in-out 1s;
+  }
+  &--sub {
+    display: block;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1.6s ease-in-out 1s;
+  }
 }
 
 /* Adding Amazing CSS Animations */
@@ -125,55 +123,56 @@ body {
 
 /* Custom Animated Button */
 
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 4rem;
-  display: inline-block;
-  border-radius: 20rem;
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 20rem;
 
-  transition: all 0.25s;
-  position: relative;
-  font-size: 1.6rem;
-}
+    transition: all 0.25s;
+    position: relative;
+    font-size: 1.6rem;
+  }
 
-.btn:hover {
-  transform: translateY(-0.5rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
-}
-.btn:active {
-  transform: translateY(-0.2rem);
-  box-shadow: 0 0.6rem 1rem rgba(0, 0, 0, 0.4);
-}
-.btn--white {
-  color: $color-grey-dark;
-  background-color: $color-grey-white;
-}
+  &:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
 
-.btn--animated {
-  animation: moveUp 1.2s ease-in-out 2s;
-  animation-fill-mode: backwards;
-}
-/* Adding Button Animation */
+    &:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+  &:active {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.6rem 1rem rgba($color-black, 0.4);
+  }
+  &--white {
+    color: $color-grey-dark;
+    background-color: $color-grey-white;
 
-.btn::after {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 20rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.4s;
-}
-.btn--white::after {
-  background-color: $color-grey-white;
-}
+    &::after {
+      background-color: $color-grey-white;
+    }
+  }
+  &--animated {
+    animation: moveUp 1.2s ease-in-out 2s;
+    animation-fill-mode: backwards;
+  }
 
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 20rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
 }

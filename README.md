@@ -14,3 +14,8 @@
 
 8 - install live-server - "npm i live-server -g"
 9- create a script in package.json for automatic reload after every change
+
+## SASS Concepts
+
+1- Use of Variables , for Colors
+2 - Use Scss Nesting
