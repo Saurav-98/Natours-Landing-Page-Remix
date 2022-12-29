@@ -34,3 +34,25 @@ import all the partial \_scss files into main.scss
 
 1- Use of Variables , for Colors
 2 - Use Scss Nesting
+
+## Basic Responsive Design Principles
+
+1 - Fluid Layouts
+
+a - to allow webpage to adapt to the current viewport width (or even height)
+b - Use % (or vh / vw) units instead of px for elements that should adapt to viewport (usually layout)
+c - Use max-width instead of width
+
+2 - Responsive Units
+
+a - Use rem unit instead of px for most lengths
+b - To make it easy to scale the entire layout down( or Up) automatically
+
+3 - Flexible Images
+
+a - by default, images don't scale automatically as we change the viewport, so we need to fix that.
+b - always use % for the image dimensions, together with the max-width property.
+
+4 - Media Queries
+
+a - To change CSS styles on certain viewport widths (called breakpoints).
